@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07111f">
+<title>Athlon Team</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+:root{
+    --bg:#07111f;
+    --card:#0d1b2d;
+    --card2:#10243a;
+    --text:#eef7ff;
+    --muted:#91a5ba;
+    --blue:#168cff;
+    --green:#18d58b;
+    --border:rgba(255,255,255,.08);
+}
+
+body{
+    margin:0;
+    background:
+        radial-gradient(circle at 12% 0%,rgba(22,140,255,.16),transparent 32%),
+        radial-gradient(circle at 92% 18%,rgba(24,213,139,.11),transparent 28%),
+        var(--bg);
+    color:var(--text);
+    font-family:'Vazirmatn',Tahoma,sans-serif;
+    min-height:100vh;
+}
+
+a{color:inherit;text-decoration:none}
+button{font:inherit;border:0;cursor:pointer}
+
+.wrap{
+    max-width:1100px;
+    margin:auto;
+    padding:22px;
+}
+
+/* NAV */
+
+nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:8px 0 40px;
+}
+
+.mark{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.mark-icon{
+    width:40px;
+    height:40px;
+    border-radius:12px;
+    display:grid;
+    place-items:center;
+    font-weight:800;
+    font-size:19px;
+    color:#07111f;
+    background:linear-gradient(135deg,var(--blue),var(--green));
+}
+
+.mark-name{
+    font-weight:700;
+    font-size:17px;
+    letter-spacing:.2px;
+}
+
+.nav-link{
+    font-size:13px;
+    color:var(--muted);
+    border:1px solid var(--border);
+    padding:9px 16px;
+    border-radius:11px;
+}
+
+/* HERO */
+
+.hero{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:40px;
+    align-items:center;
+    padding:24px 0 56px;
+}
+
+.hero h1{
+    font-size:44px;
+    line-height:1.28;
+    margin:0 0 18px;
+    font-weight:800;
+}
+
+.hero p{
+    color:var(--muted);
+    font-size:16px;
+    line-height:1.9;
+    margin:0 0 26px;
+    max-width:46ch;
+}
+
+.hero-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn-primary{
+    padding:14px 22px;
+    border-radius:13px;
+    background:linear-gradient(135deg,var(--blue),var(--green));
+    color:#07111f;
+    font-weight:700;
+    font-size:14px;
+}
+
+.btn-ghost{
+    padding:14px 22px;
+    border-radius:13px;
+    border:1px solid var(--border);
+    color:var(--text);
+    font-size:14px;
+}
+
+/* APP CARD (visual companion to the hero) */
+
+.preview{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:26px;
+    padding:26px;
+    position:relative;
+    overflow:hidden;
+}
+
+.preview::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(160deg,rgba(22,140,255,.10),transparent 55%);
+    pointer-events:none;
+}
+
+.preview-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:18px;
+}
+
+.preview-dot{
+    width:9px;height:9px;border-radius:50%;
+    background:var(--muted);
+    opacity:.5;
+}
+
+.preview-tools{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.preview-tool{
+    background:var(--card2);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:14px 12px;
+    font-size:12px;
+    color:var(--muted);
+}
+
+.preview-tool span{
+    display:block;
+    font-size:18px;
+    margin-bottom:6px;
+}
+
+/* SECTION: ABOUT */
+
+.section{
+    padding:38px 0;
+    border-top:1px solid var(--border);
+}
+
+.section h2{
+    font-size:22px;
+    margin:0 0 14px;
+    font-weight:700;
+}
+
+.section p{
+    color:var(--muted);
+    line-height:1.95;
+    max-width:64ch;
+    margin:0;
+    font-size:15px;
+}
+
+/* SECTION: APP CARD LINK */
+
+.app-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:22px;
+    padding:24px;
+    transition:.2s;
+    flex-wrap:wrap;
+}
+
+.app-card:hover{
+    border-color:rgba(22,140,255,.4);
+    transform:translateY(-2px);
+}
+
+.app-card-left{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.app-card-icon{
+    width:56px;
+    height:56px;
+    border-radius:16px;
+    display:grid;
+    place-items:center;
+    font-size:26px;
+    background:var(--card2);
+    border:1px solid var(--border);
+}
+
+.app-card-title{
+    font-size:17px;
+    font-weight:700;
+    margin:0 0 5px;
+}
+
+.app-card-desc{
+    color:var(--muted);
+    font-size:13px;
+    margin:0;
+}
+
+.app-card-go{
+    padding:12px 20px;
+    border-radius:12px;
+    background:var(--card2);
+    border:1px solid var(--border);
+    font-size:13px;
+    white-space:nowrap;
+}
+
+.app-card:hover .app-card-go{
+    background:linear-gradient(135deg,var(--blue),#126bd0);
+    border-color:transparent;
+}
+
+/* FOOTER */
+
+footer{
+    padding:36px 0 18px;
+    border-top:1px solid var(--border);
+    text-align:center;
+}
+
+.rubika{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 20px;
+    border-radius:13px;
+    border:1px solid var(--border);
+    color:var(--text);
+    font-size:13px;
+    margin-bottom:16px;
+}
+
+.rubika:hover{
+    border-color:rgba(24,213,139,.4);
+}
+
+.rubika b{
+    color:var(--green);
+    font-weight:700;
+    direction:ltr;
+    unicode-bidi:embed;
+}
+
+.foot-note{
+    color:var(--muted);
+    font-size:12px;
+}
+
+.athlon{
+    color:var(--green);
+    font-weight:700;
+}
+
+@media(max-width:760px){
+    .hero{
+        grid-template-columns:1fr;
+    }
+    .hero h1{
+        font-size:32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+    <nav>
+        <div class="mark">
+            <div class="mark-icon">A</div>
+            <div class="mark-name">Athlon Team</div>
+        </div>
+        <a class="nav-link" href="app.html">اجرای آنلاین ابزارها</a>
+    </nav>
+
+    <section class="hero">
+        <div>
+            <h1>ابزارهایی که مستقیم داخل مرورگرت اجرا می‌شن.</h1>
+            <p>
+                Athlon Team یک تیم مستقل توسعه‌ست که بر پایه‌ی
+                mineswordteam شکل گرفته. اولین ساخته‌ی ما، مجموعه‌ای
+                از ابزارهای کاربردی و سبک با نام Athlon Tools‌ه که
+                بدون نصب و بدون ثبت‌نام، همین‌جا در مرورگر کار می‌کنه.
+            </p>
+            <div class="hero-actions">
+                <a class="btn-primary" href="app.html">معرفی برنامه</a>
+                <a class="btn-ghost" href="tools.html">اجرای مستقیم</a>
+            </div>
+        </div>
+
+        <div class="preview">
+            <div class="preview-row">
+                <span class="preview-dot"></span>
+                <span class="preview-dot"></span>
+                <span class="preview-dot"></span>
+            </div>
+            <div class="preview-tools">
+                <div class="preview-tool"><span>🔐</span>رمزساز</div>
+                <div class="preview-tool"><span>📏</span>تبدیل واحد</div>
+                <div class="preview-tool"><span>🔗</span>Base64</div>
+                <div class="preview-tool"><span>🔳</span>QR ساز</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>درباره‌ی تیم</h2>
+        <p>
+            Athlon Team به‌صورت مستقل و بر پایه‌ی mineswordteam کار
+            می‌کنه؛ تمرکزمون روی ساخت ابزارهای ساده، سریع و بدون
+            پیچیدگیه — چیزهایی که واقعاً لازمشون داری، بدون نصب
+            اضافه یا حساب کاربری.
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>برنامه‌ها</h2>
+        <a class="app-card" href="app.html">
+            <div class="app-card-left">
+                <div class="app-card-icon">🧰</div>
+                <div>
+                    <p class="app-card-title">Athlon Tools</p>
+                    <p class="app-card-desc">رمزساز، مبدل واحد، شمارشگر متن، Base64، QR ساز و یادداشت — همه در یک صفحه.</p>
+                </div>
+            </div>
+            <span class="app-card-go">مشاهده و اجرا</span>
+        </a>
+    </section>
+
+    <footer>
+        <a class="rubika" href="https://rubika.ir/Athlonteam" target="_blank" rel="noopener">
+            به کانال روبیکای ما بپیوندید — <b>Rubika.ir/Athlonteam</b>
+        </a>
+        <div class="foot-note">
+            <span class="athlon">Athlon Team 2026</span>
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>

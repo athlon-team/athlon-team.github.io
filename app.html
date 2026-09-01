@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07111f">
+<title>Athlon Tools — Athlon Team</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+:root{
+    --bg:#07111f;
+    --card:#0d1b2d;
+    --card2:#10243a;
+    --text:#eef7ff;
+    --muted:#91a5ba;
+    --blue:#168cff;
+    --green:#18d58b;
+    --border:rgba(255,255,255,.08);
+}
+
+body{
+    margin:0;
+    background:
+        radial-gradient(circle at 88% 0%,rgba(24,213,139,.12),transparent 30%),
+        radial-gradient(circle at 8% 22%,rgba(22,140,255,.14),transparent 28%),
+        var(--bg);
+    color:var(--text);
+    font-family:'Vazirmatn',Tahoma,sans-serif;
+    min-height:100vh;
+}
+
+a{color:inherit;text-decoration:none}
+button{font:inherit;border:0;cursor:pointer}
+
+.wrap{
+    max-width:820px;
+    margin:auto;
+    padding:22px;
+}
+
+.back-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    color:var(--muted);
+    font-size:13px;
+    margin:8px 0 28px;
+}
+
+.back-link:hover{color:var(--text)}
+
+/* HEADER */
+
+.app-head{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin-bottom:22px;
+}
+
+.app-icon{
+    width:60px;
+    height:60px;
+    border-radius:18px;
+    display:grid;
+    place-items:center;
+    font-size:27px;
+    background:linear-gradient(135deg,var(--blue),var(--green));
+    color:#07111f;
+    font-weight:800;
+}
+
+.app-head h1{
+    margin:0 0 5px;
+    font-size:26px;
+    font-weight:800;
+}
+
+.app-head span{
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* RUN CARD */
+
+.run{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:22px;
+    padding:26px;
+    margin:26px 0 34px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.run-text h2{
+    margin:0 0 6px;
+    font-size:16px;
+    font-weight:700;
+}
+
+.run-text p{
+    margin:0;
+    color:var(--muted);
+    font-size:13px;
+    max-width:38ch;
+    line-height:1.7;
+}
+
+.run-btn{
+    padding:15px 26px;
+    border-radius:14px;
+    background:linear-gradient(135deg,var(--blue),var(--green));
+    color:#07111f;
+    font-weight:700;
+    font-size:14px;
+    white-space:nowrap;
+}
+
+/* BODY */
+
+.about p{
+    color:var(--muted);
+    line-height:1.95;
+    font-size:15px;
+    margin:0 0 32px;
+    max-width:70ch;
+}
+
+.section-title{
+    font-size:16px;
+    font-weight:700;
+    margin:0 0 16px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-bottom:36px;
+}
+
+.feature{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:16px;
+}
+
+.feature span{
+    display:block;
+    font-size:20px;
+    margin-bottom:8px;
+}
+
+.feature b{
+    display:block;
+    font-size:13px;
+    margin-bottom:4px;
+}
+
+.feature p{
+    margin:0;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.6;
+}
+
+.note{
+    border-right:3px solid var(--blue);
+    padding:4px 16px;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.8;
+    margin-bottom:36px;
+}
+
+/* FOOTER */
+
+footer{
+    padding:30px 0 18px;
+    border-top:1px solid var(--border);
+    text-align:center;
+}
+
+.rubika{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 20px;
+    border-radius:13px;
+    border:1px solid var(--border);
+    color:var(--text);
+    font-size:13px;
+    margin-bottom:16px;
+}
+
+.rubika:hover{border-color:rgba(24,213,139,.4)}
+
+.rubika b{
+    color:var(--green);
+    font-weight:700;
+    direction:ltr;
+    unicode-bidi:embed;
+}
+
+.foot-note{
+    color:var(--muted);
+    font-size:12px;
+}
+
+.athlon{
+    color:var(--green);
+    font-weight:700;
+}
+
+@media(max-width:560px){
+    .features{
+        grid-template-columns:1fr 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+    <a class="back-link" href="index.html">→ بازگشت به Athlon Team</a>
+
+    <div class="app-head">
+        <div class="app-icon">A</div>
+        <div>
+            <h1>Athlon Tools</h1>
+            <span>یک ساخته‌ی Athlon Team</span>
+        </div>
+    </div>
+
+    <div class="run">
+        <div class="run-text">
+            <h2>اجرای آنلاین</h2>
+            <p>مستقیم داخل همین مرورگر باز می‌شه، بدون نصب و بدون ثبت‌نام.</p>
+        </div>
+        <a class="run-btn" href="tools.html">اجرای آنلاین ›</a>
+    </div>
+
+    <div class="about">
+        <p>
+            Athlon Tools مجموعه‌ای سبک از ابزارهای کاربردی روزمره‌ست
+            که همه‌شون داخل یک صفحه و بدون نیاز به اتصال دائمی به
+            سرور کار می‌کنن. کافیه ابزار موردنظرت رو باز کنی و
+            استفاده کنی.
+        </p>
+    </div>
+
+    <p class="section-title">امکانات</p>
+
+    <div class="features">
+        <div class="feature">
+            <span>🔐</span>
+            <b>رمزساز</b>
+            <p>ساخت رمز تصادفی با طول و کاراکترهای دلخواه.</p>
+        </div>
+        <div class="feature">
+            <span>📏</span>
+            <b>تبدیل واحد</b>
+            <p>تبدیل طول، وزن، دما و حجم.</p>
+        </div>
+        <div class="feature">
+            <span>📝</span>
+            <b>شمارشگر متن</b>
+            <p>شمارش حروف، کلمات و خطوط متن.</p>
+        </div>
+        <div class="feature">
+            <span>🔗</span>
+            <b>Base64</b>
+            <p>رمزگذاری و رمزگشایی Base64.</p>
+        </div>
+        <div class="feature">
+            <span>🔳</span>
+            <b>QR ساز</b>
+            <p>ساخت QR از متن یا لینک.</p>
+        </div>
+        <div class="feature">
+            <span>📒</span>
+            <b>یادداشت</b>
+            <p>ذخیره‌ی یادداشت همین‌جا در مرورگر.</p>
+        </div>
+    </div>
+
+    <p class="note">
+        ابزار QR ساز برای تولید تصویر به یک سرویس آنلاین وصل می‌شه؛
+        بقیه‌ی ابزارها کاملاً داخل خود مرورگر اجرا می‌شن.
+    </p>
+
+    <footer>
+        <a class="rubika" href="https://rubika.ir/Athlonteam" target="_blank" rel="noopener">
+            به کانال روبیکای ما بپیوندید — <b>Rubika.ir/Athlonteam</b>
+        </a>
+        <div class="foot-note">
+            <span class="athlon">Athlon Team 2026</span>
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>
